@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Explorer - Tổng hợp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container">
+        <!-- Canvas will be dynamically injected here to allow switching context type (WebGL vs 2D) -->
+    </div>
+    
+    <div id="ui-panel">
+        <h1>Fractal Explorer</h1>
+        <div class="subtitle" style="margin-bottom: 5px;">Tiểu luận môn CS105 - Đồ hoạ máy tính</div>
+        <div id="author-name" class="subtitle" style="color: #4facfe; font-weight: 600; font-size: 0.85rem; margin-bottom: 20px;"></div>
+        
+        <div class="control-group">
+            <label>Chọn hệ thống Fractal:</label>
+            <select id="fractal-type">
+                <option value="sierpinski">Sierpinski Triangle & Carpet</option>
+                <option value="koch">Bông tuyết Von Koch</option>
+                <option value="minkowski">Minkowski Island</option>
+                <option value="mandelbrot">Mandelbrot & Julia Set</option>
+            </select>
+        </div>
+
+        <!-- Vùng chứa Panel cài đặt tùy chỉnh cho từng Fractal -->
+        <div id="dynamic-controls"></div>
+
+    </div>
+
+    <!-- Tái sử dụng thư viện chung của Mandelbrot -->
+    <script src="js/webgl-utils.js"></script>
+    
+    <!-- Từng thuật toán -->
+    <script src="js/koch.js"></script>
+    <script src="js/minkowski.js"></script>
+    <script src="js/sierpinski.js"></script>
+    <script src="js/mandelbrot.js"></script>
+    
+    <!-- Điều phối -->
+    <script src="js/main.js"></script>
+</body>
+</html>
